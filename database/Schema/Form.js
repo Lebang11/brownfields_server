@@ -5,7 +5,8 @@ FormSchema = new mongoose.Schema({
     previous: mongoose.SchemaTypes.String,
     current: mongoose.SchemaTypes.String,
     issues: mongoose.SchemaTypes.String,
-    breakthroughs: mongoose.SchemaTypes.String
+    breakthroughs: mongoose.SchemaTypes.String,
+    dateAdded: mongoose.SchemaTypes.Date
 });
 
 module.exports = mongoose.model('form', FormSchema);

@@ -33,7 +33,6 @@ app.get('/forms', async (req,res)=> {
     const formsDB = await FORM.find({})
    
     res.json(formsDB);
- 
 })
 
 app.post('/forms', async (req,res)=> {
@@ -42,7 +41,8 @@ app.post('/forms', async (req,res)=> {
     const current = req.body.current;
     const issues = req.body.issues;
     const breakthroughs = req.body.breakthroughs;
-    const newForm = await FORM.create({username, previous, current, issues, breakthroughs});
+    const dateAdded = new Date();
+    const newForm = await FORM.create({username, previous, current, issues, breakthroughs, dateAdded});
    console.log("new form created: " + newForm)
     res.json(newForm);
  
